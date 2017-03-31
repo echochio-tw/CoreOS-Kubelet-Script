@@ -24,7 +24,7 @@ mv kubelet /opt/bin
 echo "------------------------ now downlaod integration ------------------------"
 curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/integration
 chmod +x integration
-mv integratio /opt/bin 
+mv integration /opt/bin 
 
 echo "------------------------ now downlaod kubectl ------------------------"
 curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kubectl
@@ -61,6 +61,9 @@ systemctl daemon-reload
 systemctl start proxy.service
 systemctl enable proxy.service
 systemctl status proxy.service
+
+mkdir /etc/kubernetes
+mkdir /etc/kubernetes/manifests
 
 systemctl daemon-reload
 systemctl start kubelet.service
