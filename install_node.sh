@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir /opt
 mkdir /opt/bin
-echo "------------------------ now downlaod kube-proxy ------------------------
+echo "------------------------ now downlaod kube-proxy ------------------------"
 curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kube-proxy
 chmod +x kube-proxy
 mv kube-proxy  /opt/bin
