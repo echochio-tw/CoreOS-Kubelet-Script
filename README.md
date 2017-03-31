@@ -19,7 +19,7 @@ It's will install kube-apiserver & kube-controller-manager (file will in /opt/bi
 It's will install scheduler.service &  proxy.service & kubelet.service  (file will in /opt/bin)
 
 
-you can check check by 
+# you can check check by 
 
 /opt/bin/kubectl get node
 NAME      STATUS    AGE       VERSION
