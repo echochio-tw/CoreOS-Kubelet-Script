@@ -1,0 +1,23 @@
+[Unit]
+Description=Kubernetes API Server
+After=etcd2.service
+After=docker.service
+Wants=etcd2.service
+Wants=docker.service
+
+[Service]
+ExecStart=/opt/bin/kube-apiserver \
+--insecure-bind-address=192.168.0.69 \
+--insecure-port=8080 \
+--etcd_servers=http://192.168.0.69:2379,http://192.168.0.70:2369,http://192.168.0.71:2369 \
+--service-cluster-ip-range=172.17.0.0/16 \
+--admission_control=NamespaceLifecycle,NamespaceExists,LimitRanger,ResourceQuota \
+--anonymous-auth=false \
+--storage-backend=etcd2 \
+--logtostderr=true
+ExecStartPost=-/bin/bash -c "until /usr/bin/curl http://192.168.0.69:8080; do echo \"waiting for API server to come online...\"; sleep 3; done"
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
