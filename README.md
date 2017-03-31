@@ -15,7 +15,7 @@ service/scheduler.service
 # ./install_server.sh 
 It's will install kube-apiserver & kube-controller-manager (file will in /opt/bin)
 
-#./install_node.sh
+# ./install_node.sh
 It's will install scheduler.service &  proxy.service & kubelet.service  (file will in /opt/bin)
 
 
