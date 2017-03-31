@@ -2,16 +2,8 @@
 here=`pwd`
 mkdir /opt/bin
 cd /opt/bin
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kube-proxy
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/e2e
 curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kube-apiserver
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kubecfg
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kubelet
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/integration
 curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kube-controller-manager
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kubectl
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kubernetes
-curl -O  https://storage.googleapis.com/kubernetes-release/release/v1.6.0/bin/linux/amd64/kube-scheduler
 
 chmod +x *
 
