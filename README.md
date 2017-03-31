@@ -4,15 +4,14 @@ Script to auto install Kubelet in CoreOS (4.9.9)
 
 you must change ip address in 
 ```
-apiserver.service:--insecure-bind-address=192.168.0.69 \
-apiserver.service:--etcd_servers=http://192.168.0.69:2379,http://192.168.0.70:2369,http://192.168.0.71:2369 \
-apiserver.service:ExecStartPost=-/bin/bash -c "until /usr/bin/curl http://192.168.0.69:8080; do echo \"waiting for API server to come online...\"; sleep 3; done"
-cmd_config:    server: http://192.168.0.69:8080
-controller-manager.service:--master=http://192.168.0.69:8080 \
-kubelet.service: --api-servers=http://192.168.0.69:8080 \
-proxy.service:ExecStart=/opt/bin/kube-proxy --master=http://192.168.0.69:8080 --logtostderr=true
-scheduler.service:ExecStart=/opt/bin/kube-scheduler --master=192.168.0.69:8080
-
+service/apiserver.service:--insecure-bind-address=192.168.0.69 \
+service/apiserver.service:--etcd_servers=http://192.168.0.69:2379,http://192.168.0.70:2369,http://192.168.0.71:2369 \
+service/apiserver.service:ExecStartPost=-/bin/bash -c "until /usr/bin/curl http://192.168.0.69:8080; do echo \"waiting for API server to come online...\"; sleep 3; done"
+service/cmd_config:    server: http://192.168.0.69:8080
+service/controller-manager.service:--master=http://192.168.0.69:8080 \
+service/kubelet.service: --api-servers=http://192.168.0.69:8080 \
+service/proxy.service:ExecStart=/opt/bin/kube-proxy --master=http://192.168.0.69:8080 --logtostderr=true
+service/scheduler.service:ExecStart=/opt/bin/kube-scheduler --master=192.168.0.69:8080
 ```
 
 # ./install_server.sh 
