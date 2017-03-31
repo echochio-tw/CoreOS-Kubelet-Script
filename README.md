@@ -2,8 +2,9 @@
 
 Script to auto install Kubelet in CoreOS (4.9.9)
 ```
- git clone https://github.com/chio-nzgft/CoreOS-Kubelet-Script
- cd CoreOS-Kubelet-Script
+$ sudo su -
+# git clone https://github.com/chio-nzgft/CoreOS-Kubelet-Script
+# cd CoreOS-Kubelet-Script
 ```
 
 you must change ip address in 
