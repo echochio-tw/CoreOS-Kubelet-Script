@@ -13,8 +13,8 @@ ls -l
 pause 
 echo "============== copy config file ================="
 cd $here
-cp apiserver.service /etc/systemd/system/apiserver.service
-cp controller-manager.service /etc/systemd/system/controller-manager.service
+cp service/apiserver.service /etc/systemd/system/apiserver.service
+cp service/controller-manager.service /etc/systemd/system/controller-manager.service
 echo "=================================================="
 
 systemctl daemon-reload
