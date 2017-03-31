@@ -8,7 +8,8 @@ Script to auto install Kubelet in CoreOS (4.9.9)
 
 you must change ip address in 
 if you want change to 192.168.0.111
-and etcd_servers 192.168.0.112 ,  192.168.0.113
+
+and etcd_servers 192.168.0.111, 192.168.0.112 , 192.168.0.113
 
 ```
 # sed -i 's/192.168.0.69/192.168.0.111/g' service/*
