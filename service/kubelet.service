@@ -1,0 +1,22 @@
+[Unit]
+Description=Kubernetes Kubelet
+After=etcd2.service
+After=docker.service
+After=scheduler.service
+After=proxy.service
+Wants=etcd2.service
+Wants=docker.service
+Wants=scheduler.service
+Wants=proxy.service
+
+[Service]
+EnvironmentFile=/etc/environment
+ExecStart=/opt/bin/kubelet \
+ --api-servers=http://192.168.0.69:8080 \
+ --pod-manifest-path=/etc/kubernetes/manifests \
+ --logtostderr=true
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
