@@ -1,6 +1,6 @@
 # CoreOS-Kubelet-Script
 
-A script to auto install Kubelet in CoreOS (4.9.9)
+Script to auto install Kubelet in CoreOS (4.9.9)
 
 you must change ip address in 
 ```
