@@ -3,7 +3,7 @@
 Script to auto install Kubelet in CoreOS (4.9.9)
 ```
 $ sudo su -
-# git clone https://github.com/chio-nzgft/CoreOS-Kubelet-Script
+# git clone https://github.com/echochio-tw/CoreOS-Kubelet-Script
 # cd CoreOS-Kubelet-Script
 ```
 
@@ -23,7 +23,7 @@ you can check it
 ```
 # grep 192.168.0.111 service/*
 service/apiserver.service:--insecure-bind-address=192.168.0.111 \
-service/apiserver.service:--etcd_servers=http://192.168.0.111:2379,http://192.168.0.70:2369,http://192.168.0.71:2369 \
+service/apiserver.service:--etcd_servers=http://192.168.0.111:2379,http://192.168.0.112:2369,http://192.168.0.113:2369 \
 service/apiserver.service:ExecStartPost=-/bin/bash -c "until /usr/bin/curl http://192.168.0.111:8080; do echo \"waiting for API server to come online...\"; sleep 3; done"
 service/cmd_config:    server: http://192.168.0.111:8080
 service/controller-manager.service:--master=http://192.168.0.111:8080 \
