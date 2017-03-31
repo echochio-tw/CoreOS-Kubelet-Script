@@ -1,4 +1,4 @@
-# CoreOS-Kubelet-Script
+# CoreOS-Kubelet-install-Script
 
 Script to auto install Kubelet in CoreOS (4.9.9)
 ```
