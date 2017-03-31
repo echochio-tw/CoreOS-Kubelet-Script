@@ -1,5 +1,4 @@
 #!/bin/bash
-here=`pwd`
 mkdir /opt
 mkdir /opt/bin
 echo "------------------------ now downlaod kube-proxy ------------------------
@@ -48,33 +47,25 @@ ls -l /opt/bin
 read -n 1 -p "Press any key to continue..."
 
 echo "============== copy config file ================="
-cd $here
 cp service/scheduler.service /etc/systemd/system/scheduler.service
 cp service/proxy.service /etc/systemd/system/proxy.service
 cp service/kubelet.service /etc/systemd/system/kubelet.service
 echo "=================================================="
 
 systemctl daemon-reload
-systemctl start apiserver.service
-systemctl enable apiserver.service 
-systemctl status apiserver.service
-netstat -natp |grep 8080 |grep 0.0.0.0
-read -n 1 -p "Press any key to continue..."
+systemctl start scheduler.service
+systemctl enable scheduler.service
+systemctl status scheduler.service
 
 systemctl daemon-reload
-systemctl start controller-manager.service
-systemctl enable controller-manager.service
-systemctl status controller-manager.service
-read -n 1 -p "Press any key to continue..."
+systemctl start proxy.service
+systemctl enable proxy.service
+systemctl status proxy.service
 
 systemctl daemon-reload
-systemctl start apiserver.service
-systemctl enable apiserver.service
-systemctl status apiserver.service
-netstat -natp |grep 8080 |grep 0.0.0.0
-read -n 1 -p "Press any key to continue..."
+systemctl start kubelet.service
+systemctl enable kubelet.service
+systemctl status kubelet.service
 
 mkdir ~/.kube
 cp  service/cmd_config ~/.kube/config
-
-
