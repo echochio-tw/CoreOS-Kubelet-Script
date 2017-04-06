@@ -42,8 +42,11 @@ It's will install scheduler.service &  proxy.service & kubelet.service  (file wi
 
 # you can check check by 
 ```
-/opt/bin/kubectl get node
+ # /opt/bin/kubectl get node
 NAME      STATUS    AGE       VERSION
-coreos1   Ready     14m       v1.6.0
+coreos1   Ready     4m        v1.6.0
+coreos2   Ready     2m        v1.6.0
+coreos3   Ready     3m        v1.6.0
+
 
 ```
